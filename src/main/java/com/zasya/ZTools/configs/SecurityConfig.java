@@ -33,8 +33,8 @@ public class SecurityConfig {
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-                .authenticationProvider(authenticationProvider())
-                .httpBasic(Customizer.withDefaults());
+                .authenticationProvider(authenticationProvider());
+//                .httpBasic()
 //                .formLogin(form -> form
 //                        .loginPage("/login")
 //                        .defaultSuccessUrl("/dashboard", true)
