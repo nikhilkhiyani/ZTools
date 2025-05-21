@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ZTools - Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f6f8fa;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .app-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .app-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 180px;
+            padding: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: center;
+        }
+
+        .app-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+
+        .app-card p {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        .logout-btn {
+            margin-top: 50px;
+        }
+
+        .logout-btn button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .logout-btn button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Welcome to ZTools</h1>
+
+<div class="app-container">
+    <!-- ZTASK -->
+    <div class="app-card" th:if="${apps.contains('ZTASK')}">
+        <a href="/ztask"><img src="/images/app1.png" alt="ZTASK" /></a>
+        <p>ZTASK</p>
+    </div>
+
+    <!-- ZDESK -->
+    <div class="app-card" th:if="${apps.contains('ZDESK')}">
+        <a href="/zdesk"><img src="/images/app2.png" alt="ZDESK" /></a>
+        <p>ZDESK</p>
+    </div>
+
+    <!-- IT TICKET SYSTEM -->
+    <div class="app-card" th:if="${apps.contains('IT_TICKET_SYSTEM')}">
+        <a href="/it-ticket"><img src="/images/app3.png" alt="IT TICKET SYSTEM" /></a>
+        <p>IT TICKET SYSTEM</p>
+    </div>
+</div>
+
+<div class="logout-btn">
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+</div>
+
+</body>
+</html>

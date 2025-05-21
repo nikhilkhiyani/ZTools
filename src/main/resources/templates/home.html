@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ZTools - Home</title>
+</head>
+<body>
+<h1>Welcome to ZTools</h1>
+<div>
+    <a href="https://app1.example.com"><img src="/images/app1.png" alt="App1" width="150"></a>
+    <a href="https://app2.example.com"><img src="/images/app2.png" alt="App2" width="150"></a>
+    <a href="https://app3.example.com"><img src="/images/app3.png" alt="App3" width="150"></a>
+</div>
+<div>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+
+</div>
+</body>
+</html>
